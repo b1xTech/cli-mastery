@@ -1,0 +1,35 @@
+Note: wc (word count) prints the number of lines, words, and bytes in files or input streams.
+It is useful for measuring text size, counting items, and validating data.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Count lines in a file
+
+wc -l file.txt
+
+Count words in a file
+
+wc -w file.txt
+
+Count bytes in a file
+
+wc -c file.txt
+
+Count lines, words, and bytes together
+
+wc file.txt
+
+Count lines from piped input
+
+cat file.txt | wc -l
+
+Count the total number of lines across multiple files
+
+wc -l *.txt
+
+Show only the total lines from multiple files
+
+wc -l *.txt | tail -n 1
+
+Count characters (useful for Unicode-aware systems with wc -m)
+
+wc -m file.txt
