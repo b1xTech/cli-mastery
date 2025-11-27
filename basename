@@ -1,0 +1,26 @@
+Note: basename strips directory paths from a file path.
+It is useful when you need only the filename and not the full path.
+Only common usage patterns are included here. Additional options exist but are not covered in this section.
+
+Get filename from a full path
+
+basename /home/user/documents/report.pdf
+
+Remove a file extension
+
+basename report.pdf .pdf
+
+Use inside a loop to process filenames
+
+for f in /var/log/*.log; do
+printf "Processing: %s\n" "$(basename "$f")"
+done
+
+Extract just the script name inside a Bash script
+
+printf "Script: %s\n" "$(basename "$0")"
+
+Combine with dirname to split path components
+
+file="/opt/data/archive.tar.gz"
+printf "Dir: %s, File: %s\n" "$(dirname "$file")" "$(basename "$file")"
