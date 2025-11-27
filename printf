@@ -1,0 +1,35 @@
+Note: printf prints formatted output.
+It provides more control and consistency than echo, including formatting numbers, aligning text, and producing structured output.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Print a basic string
+
+printf "Hello world\n"
+
+Print multiple values with formatting
+
+printf "Name: %s, Age: %d\n" "Alice" 30
+
+Print numbers with fixed decimal places
+
+printf "%.2f\n" 3.14159
+
+Right-align text using field width
+
+printf "%10s\n" "text"
+
+Left-align text
+
+printf "%-10s\n" "text"
+
+Print a sequence of formatted numbers
+
+printf "Item %02d\n" 1 2 3 4 5
+
+Use printf in a loop to format output
+
+seq 5 | while read n; do printf "Value: %03d\n" "$n"; done
+
+Format data from a file into columns
+
+awk '{ printf "%-15s %10s\n", $1, $2 }' file.txt
