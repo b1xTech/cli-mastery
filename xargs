@@ -1,0 +1,31 @@
+Note: xargs builds and executes command lines from standard input.
+It is commonly used to process lists of items, pass arguments to commands, and handle data streams efficiently.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Run a command for each item in a list
+
+echo "file1 file2 file3" | xargs rm
+
+Pass each line of a file as an argument to a command
+
+cat list.txt | xargs mkdir
+
+Use xargs to count lines in multiple files
+
+ls *.txt | xargs wc -l
+
+Limit how many arguments are passed per command
+
+seq 1 10 | xargs -n 2 echo
+
+Replace placeholder {} with input items
+
+find . -name "*.log" | xargs -I {} mv {} logs/
+
+Read null-separated items (safe for spaces and special chars)
+
+find . -type f -print0 | xargs -0 rm
+
+Use xargs to download URLs from a list
+
+cat urls.txt | xargs -n 1 curl -O
