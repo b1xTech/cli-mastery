@@ -1,0 +1,31 @@
+Note: paste merges lines of files horizontally by joining them with a delimiter (default: tab).
+It is useful for combining columns, creating simple tables, and aligning data from multiple sources.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Merge two files line by line (default delimiter: tab)
+
+paste file1.txt file2.txt
+
+Use a custom delimiter (comma)
+
+paste -d ',' file1.txt file2.txt
+
+Combine three files into columns
+
+paste file1.txt file2.txt file3.txt
+
+Merge lines from one file with a dash as delimiter
+
+paste -d '-' file.txt file.txt
+
+Combine the output of commands using process substitution
+
+paste <(seq 1 5) <(seq 6 10)
+
+Turn multiple lines into a single tab-separated line
+
+paste -s file.txt
+
+Turn multiple lines into a single comma-separated line
+
+paste -s -d ',' file.txt
