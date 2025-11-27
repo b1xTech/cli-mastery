@@ -1,0 +1,36 @@
+Note: comm compares two sorted files line by line and prints three columns:
+
+Lines only in the first file
+
+Lines only in the second file
+
+Lines common to both files
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Show lines unique to file1, unique to file2, and common lines
+
+comm file1.txt file2.txt
+
+Show only lines common to both files
+
+comm -12 file1.txt file2.txt
+
+Show lines unique to file1
+
+comm -23 file1.txt file2.txt
+
+Show lines unique to file2
+
+comm -13 file1.txt file2.txt
+
+Hide column 1 (only show lines from file2 and common lines)
+
+comm -1 file1.txt file2.txt
+
+Compare two sorted lists of users
+
+comm users_old.txt users_new.txt
+
+Use process substitution to avoid creating temporary files
+
+comm <(sort a.txt) <(sort b.txt)
