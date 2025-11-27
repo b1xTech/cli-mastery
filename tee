@@ -1,0 +1,31 @@
+Note: tee reads from standard input and writes the output to both the terminal and one or more files simultaneously.
+It is useful for logging, debugging, and capturing command output while still displaying it.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Write command output to a file while displaying it
+
+echo "hello" | tee out.txt
+
+Append output to a file instead of overwriting
+
+echo "log entry" | tee -a log.txt
+
+Save ls output to a file and show it on screen
+
+ls -l | tee files.txt
+
+Pipe through tee to split a pipeline
+
+echo "data" | tee copy.txt | tr 'a-z' 'A-Z'
+
+Capture command output into multiple files
+
+echo "backup" | tee file1.txt file2.txt
+
+Use tee to debug a pipeline
+
+cat input.txt | tee debug.txt | grep "error"
+
+Log system information while viewing it
+
+df -h | tee system-info.txt
