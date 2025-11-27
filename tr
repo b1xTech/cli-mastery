@@ -1,0 +1,30 @@
+Note: tr is a simple, character-based transformation tool used to translate, delete, or squeeze repeated characters in a text stream.
+Only basic and commonly useful examples are included here. The command has additional capabilities not covered in this section.
+
+Translate lowercase to uppercase
+
+tr 'a-z' 'A-Z' < file.txt
+
+Replace spaces with underscores
+
+tr ' ' '_' < file.txt
+
+Delete digits
+
+tr -d '0-9' < file.txt
+
+Squeeze repeated spaces into one
+
+tr -s ' ' < file.txt
+
+Keep only alphabetic characters (delete everything else)
+
+tr -cd 'A-Za-z' < file.txt
+
+Translate commas to newlines (split CSV fields into one per line)
+
+tr ',' '\n' < file.txt
+
+Convert Windows line endings (CRLF) to Unix (LF)
+
+tr -d '\r' < file.txt
